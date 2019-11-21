@@ -6,6 +6,11 @@ import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
+
+import com.example.validation.service.OnCreate;
+import com.example.validation.service.OnUpdate;
 
 import lombok.Data;
 
@@ -15,6 +20,8 @@ public class InputEntityWithCustomValidator {
 
     @Id
     @GeneratedValue
+    @NotNull(groups = OnUpdate.class)
+    @Null(groups = OnCreate.class)
     private Long id;
 
     @Min(1)
