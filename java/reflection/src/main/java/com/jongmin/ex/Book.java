@@ -47,4 +47,28 @@ public class Book implements IBook {
     public String publicMethod() {
         return "publicMethod";
     }
+
+    public int getPrivateValue() {
+        return privateValue;
+    }
+
+    public int getPackagePrivateValue() {
+        return packagePrivateValue;
+    }
+
+    public int getPublicValue() {
+        return publicValue;
+    }
+
+    private void setPrivateValue(int privateValue) {
+        this.privateValue = privateValue;
+    }
+
+    void setPackagePrivateValue(int packagePrivateValue) {
+        this.packagePrivateValue = packagePrivateValue;
+    }
+
+    public void setPublicValue(int publicValue) {
+        this.publicValue = publicValue;
+    }
 }
