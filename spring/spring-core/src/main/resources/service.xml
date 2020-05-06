@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="simpleService" class="com.jongmin.springcore.SimpleService">
+  <bean id="simpleService" name="simpleServiceName" class="com.jongmin.springcore.SimpleService">
     <property name="simpleRepository" ref="simpleRepository" />
   </bean>
 
