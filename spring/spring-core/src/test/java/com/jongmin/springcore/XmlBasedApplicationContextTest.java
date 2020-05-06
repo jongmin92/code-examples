@@ -27,4 +27,10 @@ public class XmlBasedApplicationContextTest {
         final SimpleRepository simpleRepository = context.getBean(SimpleRepository.class);
         assertThat(simpleRepository).isNotNull();
     }
+
+    @Test
+    public void testBeanDefinition() {
+        assertThat(context.containsBeanDefinition("simpleService")).isTrue();
+        assertThat(context.containsBeanDefinition("simpleRepository")).isTrue();
+    }
 }
