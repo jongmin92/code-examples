@@ -33,4 +33,16 @@ public class XmlBasedApplicationContextTest {
         assertThat(context.containsBeanDefinition("simpleService")).isTrue();
         assertThat(context.containsBeanDefinition("simpleRepository")).isTrue();
     }
+
+    @Test
+    public void testCreateBeanByFactoryMethod() {
+        final ClientService clientService = context.getBean("clientService", ClientService.class);
+        assertThat(clientService).isNotNull();
+    }
+
+    @Test
+    public void testCreateBeanByFactoryBean() {
+        final ClientService clientService = context.getBean("clientService2", ClientService.class);
+        assertThat(clientService).isNotNull();
+    }
 }

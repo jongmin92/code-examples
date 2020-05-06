@@ -8,4 +8,10 @@
     <property name="simpleRepository" ref="simpleRepository" />
   </bean>
 
+  <bean id="clientService" class="com.jongmin.springcore.ClientService" factory-method="createInstance" />
+
+  <bean id="clientServiceFactory" class="com.jongmin.springcore.ClientServiceFactory" />
+
+  <bean id="clientService2" factory-bean="clientServiceFactory" factory-method="createClientServiceInstance" />
+
 </beans>
