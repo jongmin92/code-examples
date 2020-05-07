@@ -14,4 +14,26 @@
 
   <bean id="clientService2" factory-bean="clientServiceFactory" factory-method="createClientServiceInstance" />
 
+  <bean id="beanOne" class="com.jongmin.springcore.ThingOne">
+    <constructor-arg ref="beanThree" />
+    <constructor-arg ref="beanTwo" />
+  </bean>
+  <bean id="beanTwo" class="com.jongmin.springcore.ThingTwo" />
+  <bean id="beanThree" class="com.jongmin.springcore.ThingThree" />
+
+  <bean id="exampleBean" class="com.jongmin.springcore.ExampleBean">
+    <constructor-arg type="java.lang.String" value="2500" />
+    <constructor-arg type="int" value="4500" />
+  </bean>
+
+  <bean id="exampleBean2" class="com.jongmin.springcore.ExampleBean">
+    <constructor-arg index="1" value="2500" />
+    <constructor-arg index="0" value="4500" />
+  </bean>
+
+  <bean id="exampleBean3" class="com.jongmin.springcore.ExampleBean">
+    <constructor-arg name="years" value="4500" />
+    <constructor-arg name="ultimateAnswer" value="2500" />
+  </bean>
+
 </beans>
