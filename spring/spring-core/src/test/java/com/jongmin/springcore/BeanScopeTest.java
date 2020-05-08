@@ -18,9 +18,17 @@ public class BeanScopeTest {
 
     @Test
     public void singletonTest() {
-        final SimpleRepository bean1 = context.getBean(SimpleRepository.class);
-        final SimpleRepository bean2 = context.getBean(SimpleRepository.class);
+        final SimpleRepository bean1 = context.getBean("simpleRepository", SimpleRepository.class);
+        final SimpleRepository bean2 = context.getBean("simpleRepository", SimpleRepository.class);
 
         assertThat(bean1).isEqualTo(bean2);
+    }
+
+    @Test
+    public void prototypeTest() {
+        final SimpleRepository bean1 = context.getBean("simpleRepository2", SimpleRepository.class);
+        final SimpleRepository bean2 = context.getBean("simpleRepository2", SimpleRepository.class);
+
+        assertThat(bean1).isNotEqualTo(bean2);
     }
 }

@@ -4,6 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="simpleRepository" name="simpleRepositoryName" class="com.jongmin.springcore.SimpleRepository" />
+  <bean id="simpleRepository" class="com.jongmin.springcore.SimpleRepository" />
+
+  <bean id="simpleRepository2" class="com.jongmin.springcore.SimpleRepository" scope="prototype" />
 
 </beans>
