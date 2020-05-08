@@ -8,4 +8,12 @@
 
   <bean id="simpleRepository2" class="com.jongmin.springcore.SimpleRepository" scope="prototype" />
 
+  <bean id="simpleService" class="com.jongmin.springcore.SimpleService">
+    <property name="simpleRepository" ref="simpleRepository" />
+  </bean>
+
+  <bean id="simpleService2" class="com.jongmin.springcore.SimpleService">
+    <property name="simpleRepository" ref="simpleRepository2" />
+  </bean>
+
 </beans>
