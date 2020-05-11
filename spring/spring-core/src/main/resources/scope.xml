@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
 
   <bean id="simpleRepository" class="com.jongmin.springcore.SimpleRepository" />
 
   <bean id="simpleRepository2" class="com.jongmin.springcore.SimpleRepository" scope="prototype" />
+
+  <bean id="simpleRepository3" class="com.jongmin.springcore.SimpleRepository" scope="prototype">
+    <aop:scoped-proxy />
+  </bean>
 
   <bean id="simpleService" class="com.jongmin.springcore.SimpleService">
     <property name="simpleRepository" ref="simpleRepository" />
@@ -14,6 +21,10 @@
 
   <bean id="simpleService2" class="com.jongmin.springcore.SimpleService">
     <property name="simpleRepository" ref="simpleRepository2" />
+  </bean>
+
+  <bean id="simpleServiceWithProxy" class="com.jongmin.springcore.SimpleServiceWithProxy">
+    <property name="simpleRepository" ref="simpleRepository3" />
   </bean>
 
 </beans>

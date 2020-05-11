@@ -49,4 +49,13 @@ public class BeanScopeTest {
 
         assertThat(bean1).isEqualTo(bean2);
     }
+
+    @Test
+    public void singletonWithPrototypeProxyTest() {
+        final SimpleServiceWithProxy simpleServiceWithProxy = context.getBean(SimpleServiceWithProxy.class);
+        final SimpleRepository bean1 = simpleServiceWithProxy.getSimpleRepository();
+        final SimpleRepository bean2 = simpleServiceWithProxy.getSimpleRepository();
+
+        assertThat(bean1).isEqualTo(bean2);
+    }
 }
