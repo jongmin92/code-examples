@@ -4,16 +4,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class LifeCycleTest {
 
-    private static ApplicationContext context;
+    private static ConfigurableApplicationContext context;
 
     @BeforeAll
     public static void setUp() {
         context = new ClassPathXmlApplicationContext("lifecycle.xml");
+        context.registerShutdownHook();
     }
 
     @Test
