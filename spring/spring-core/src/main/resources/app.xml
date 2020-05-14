@@ -7,4 +7,6 @@
   <import resource="repository.xml" />
   <import resource="service.xml" />
 
+  <bean class="com.jongmin.springcore.InstantiationTracingBeanPostProcessor" />
+
 </beans>
