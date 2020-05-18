@@ -25,4 +25,14 @@ public class AnnotationBasedApplicationTest {
         assertThat(movieCatalog).isNotNull();
         assertThat(movieCatalog.getName()).isEqualTo("first");
     }
+
+    @Test
+    public void qualifierTest() {
+        final MovieRecommender movieRecommender = context.getBean(MovieRecommender.class);
+        final MovieCatalog movieCatalog2 = movieRecommender.getMovieCatalog2();
+
+        assertThat(movieRecommender).isNotNull();
+        assertThat(movieCatalog2).isNotNull();
+        assertThat(movieCatalog2.getName()).isEqualTo("second");
+    }
 }

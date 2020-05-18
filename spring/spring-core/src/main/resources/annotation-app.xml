@@ -9,9 +9,13 @@
 
   <context:annotation-config />
 
-  <bean class="com.jongmin.springcore.FirstMovieCatalog" primary="true" />
+  <bean class="com.jongmin.springcore.FirstMovieCatalog" primary="true" >
+    <qualifier value="first" />
+  </bean>
 
-  <bean class="com.jongmin.springcore.SecondMovieCatalog" />
+  <bean class="com.jongmin.springcore.SecondMovieCatalog" >
+    <qualifier value="second" />
+  </bean>
 
   <bean class="com.jongmin.springcore.MovieRecommender" />
 
