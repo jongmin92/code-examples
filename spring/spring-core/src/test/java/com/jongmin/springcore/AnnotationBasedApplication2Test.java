@@ -2,23 +2,28 @@ package com.jongmin.springcore;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class AnnotationBasedApplication2Test {
 
-    private static ApplicationContext context;
+    @Test
+    public void contextLoadTest() {
+        final ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-    @BeforeAll
-    public static void setUp() {
-        context = new AnnotationConfigApplicationContext(AppConfig.class);
+        final MyService service = context.getBean(MyService.class);
+        assertThat(service).isNotNull();
     }
 
     @Test
-    public void test() {
-        final MyService service = context.getBean(MyService.class);
-        assertThat(service).isNotNull();
+    public void importAnnotationTest() {
+        final ApplicationContext context = new AnnotationConfigApplicationContext(ConfigB.class);
+
+        final A a = context.getBean(A.class);
+        final B b = context.getBean(B.class);
+
+        assertThat(a).isNotNull();
+        assertThat(b).isNotNull();
     }
 }
