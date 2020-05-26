@@ -1,4 +1,4 @@
-package com.jongmin.example.controllertest;
+package com.jongmin.example;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

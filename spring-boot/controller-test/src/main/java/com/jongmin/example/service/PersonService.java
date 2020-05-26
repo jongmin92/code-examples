@@ -27,8 +27,4 @@ public class PersonService {
                       .findAny()
                       .orElseThrow(() -> new NonExistingPersonException());
     }
-
-    public void addPerson(Person person) {
-        this.persons.add(person);
-    }
 }

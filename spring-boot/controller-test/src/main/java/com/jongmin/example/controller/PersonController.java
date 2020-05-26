@@ -1,10 +1,8 @@
 package com.jongmin.example.controller;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jongmin.example.domain.Person;
@@ -13,7 +11,8 @@ import com.jongmin.example.service.PersonService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@RestController("/persons")
+@RestController
+@RequestMapping("/persons")
 public class PersonController {
 
     private final PersonService personService;
@@ -21,10 +20,5 @@ public class PersonController {
     @GetMapping("/{name}")
     public Person getPersonByName(@PathVariable String name) {
         return personService.getPerson(name);
-    }
-
-    @PostMapping
-    public void addPerson(@RequestBody Person person) {
-        personService.addPerson(person);
     }
 }

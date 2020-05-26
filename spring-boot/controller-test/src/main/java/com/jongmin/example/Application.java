@@ -1,4 +1,4 @@
-package com.jongmin.example.controllertest;
+package com.jongmin.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
