@@ -26,7 +26,7 @@ import com.jongmin.example.service.PersonService;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class PersonControolerSpringBootMockTest {
+public class PersonControllerSpringBootMockTest {
 
     @Autowired
     private MockMvc mockMvc;
