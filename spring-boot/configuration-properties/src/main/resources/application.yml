@@ -1,0 +1,7 @@
+mail:
+  hostname: host@gmail.com
+  port: 9000
+  from: mailer@gmail.com
+  credentials:
+    username: jm
+    password: password
